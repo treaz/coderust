@@ -1,4 +1,4 @@
-package com.horiaconstantin.coderust;
+package com.horiaconstantin.coderust.arrays;
 
 public class FindLowHigh {
 

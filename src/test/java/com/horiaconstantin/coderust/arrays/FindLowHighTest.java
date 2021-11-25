@@ -1,10 +1,10 @@
-package com.horiaconstantin.coderust;
+package com.horiaconstantin.coderust.arrays;
 
 import org.junit.jupiter.api.Test;
 
-import static com.horiaconstantin.coderust.FindLowHigh.findHighIndex;
-import static com.horiaconstantin.coderust.FindLowHigh.findLowIndex;
-import static org.junit.jupiter.api.Assertions.*;
+import static com.horiaconstantin.coderust.arrays.FindLowHigh.findHighIndex;
+import static com.horiaconstantin.coderust.arrays.FindLowHigh.findLowIndex;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FindLowHighTest {
 
