@@ -1,10 +1,11 @@
 package com.horiaconstantin.coderust.trees;
 
 import java.util.List;
+import java.util.Random;
 
 class BinaryTree {
 
-	public static BinaryTreeNode root;
+	public BinaryTreeNode root;
 
 	public BinaryTree() {
 		root = null;
@@ -41,38 +42,38 @@ class BinaryTree {
 		return root;
 	}
 
+	public static BinaryTreeNode insert_BT(BinaryTreeNode root, int d) {
+
+		BinaryTreeNode pNew = new BinaryTreeNode(d);
+		if (root == null) {
+			return pNew;
+		}
+
+		BinaryTreeNode parent = null;
+		BinaryTreeNode pTemp = root;
+		while (pTemp != null) {
+			parent = pTemp;
+			if (d <= pTemp.data) {
+				pTemp = pTemp.left;
+			} else {
+				pTemp = pTemp.right;
+			}
+		}
+
+		Random generator = new Random();
+		int dir = generator.nextInt(1000);
+
+		if (dir % 2 == 0) {
+			parent.left = pNew;
+			pNew.parent = parent;
+		} else {
+			parent.right = pNew;
+			pNew.parent = parent;
+		}
+		return root;
+	}
+
 	//
-//	public static BinaryTreeNode insert_BT(BinaryTreeNode root, int d) {
-//
-//		BinaryTreeNode pNew = new BinaryTreeNode(d);
-//		if (root == null) {
-//			return pNew;
-//		}
-//
-//		BinaryTreeNode parent = null;
-//		BinaryTreeNode pTemp = root;
-//		while (pTemp != null) {
-//			parent = pTemp;
-//			if (d <= pTemp.data) {
-//				pTemp = pTemp.left;
-//			} else {
-//				pTemp = pTemp.right;
-//			}
-//		}
-//
-//		Random generator = new Random();
-//		int dir = generator.nextInt(1000);
-//
-//		if (dir%2 == 0) {
-//			parent.left = pNew;
-//			pNew.parent = parent;
-//		} else {
-//			parent.right = pNew;
-//			pNew.parent = parent;
-//		}
-//		return root;
-//	}
-//
 //	public static BinaryTreeNode findInBst(BinaryTreeNode root, int d){
 //		if(root == null)
 //			return null;
@@ -127,28 +128,28 @@ class BinaryTree {
 		}
 		return root;
 	}
-//
-//	public static BinaryTreeNode createRandomBST(int count, int max_value) {
-//		BinaryTreeNode root = null;
-//		for (int i = 0; i < count; ++i) {
-//			Random generator = new Random();
-//			root = insert(root, generator.nextInt(max_value));
-//		}
-//		return root;
-//	}
-//
-//	public static BinaryTreeNode createRandomBST(int count) {
-//		return createRandomBST(count, Integer.MAX_VALUE);
-//	}
-//
-//	public static BinaryTreeNode createBinaryTree(int count) {
-//		BinaryTreeNode root = null;
-//		for (int i = 0; i < count; ++i) {
-//			Random generator = new Random();
-//			root = insert_BT(root, generator.nextInt(100));
-//		}
-//		return root;
-//	}
+
+	public static BinaryTreeNode createRandomBST(int count, int max_value) {
+		BinaryTreeNode root = null;
+		for (int i = 0; i < count; ++i) {
+			Random generator = new Random();
+			root = insert(root, generator.nextInt(max_value));
+		}
+		return root;
+	}
+
+	public static BinaryTreeNode createRandomBST(int count) {
+		return createRandomBST(count, Integer.MAX_VALUE);
+	}
+
+	public static BinaryTreeNode createBinaryTree(int count) {
+		BinaryTreeNode root = null;
+		for (int i = 0; i < count; ++i) {
+			Random generator = new Random();
+			root = insert_BT(root, generator.nextInt(100));
+		}
+		return root;
+	}
 //
 //	private static void populateParentsRec(BinaryTreeNode root, BinaryTreeNode parent) {
 //		if (root == null) {
