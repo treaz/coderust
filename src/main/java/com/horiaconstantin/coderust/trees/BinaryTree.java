@@ -3,7 +3,7 @@ package com.horiaconstantin.coderust.trees;
 import java.util.List;
 import java.util.Random;
 
-class BinaryTree {
+public class BinaryTree {
 
 	public BinaryTreeNode root;
 

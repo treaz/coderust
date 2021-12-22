@@ -18,4 +18,13 @@ class InorderIterativeTest {
 
 		assertIterableEquals(asList(25, 50, 75, 100, 125, 200, 350), binaryTreeNodes);
 	}
+
+	@Test
+	void testIterativeInorderSimple() {
+		BinaryTreeNode bst = BinaryTree.createBST(asList(1, -2, 5, -3, -1));
+
+		List<Integer> binaryTreeNodes = iterativeInorder(bst);
+
+		assertIterableEquals(asList(-3, -2, -1, 1, 5), binaryTreeNodes);
+	}
 }
