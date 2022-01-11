@@ -33,7 +33,7 @@ class Pair<X, Y> {
 
 public class SearchMatrix {
 	//	There's a more efficient way than the brute O(n*m)
-	public static IntPair searchInMatrix(int matrix[][], int value) {
+	public static IntPair searchInMatrix(int[][] matrix, int value) {
 		return new IntPair(-1, -1);
 	}
 }
